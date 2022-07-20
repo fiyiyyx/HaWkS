@@ -1608,10 +1608,9 @@ Redis:srem(MisTiri.."Admin:Group"..msg.chat_id,msg.sender_id.user_id)
 Redis:srem(MisTiri.."Special:Group"..msg.chat_id,msg.sender_id.user_id)
 if Json_Info.ok == false and Json_Info.error_code == 400 and Json_Info.description == "Bad Request: CHAT_ADMIN_REQUIRED" then
 if #monsha ~= 0 then 
-local ListMembers = '\n*✠┊تاك للمالكين  \n 
-┉┉┉┉┉┉┉┉┉┉*\n'
+local ListMembers = '\n*✧︙تاك للمالكين  \n — — — — — — — — —*\n'
 for k, v in pairs(monsha) do
-local UserInfo = bot.getUser(v)
+local UserInfo = merolua.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
 ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
 else
@@ -22901,7 +22900,7 @@ local knez = ballancee + 10000000
 Redis:set("boob"..msg.sender_id.user_id , knez)
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-bot.sendText(msg.chat_id,msg.id,""..neews.." لقد وجدت كنز\nالكنز : حقيبة محاسب البنك 💼\nسعره : 10000000 جنيه 💵\nرصيدك حاليا : "..convert_mony.." جنيه 💵\n✦","md",true)
+bot.sendText(msg.chat_id,msg.id,""..neews.." لقد وجدت كنز\nالكنز : حقيبة محاسب البنك ??\nسعره : 10000000 جنيه 💵\nرصيدك حاليا : "..convert_mony.." جنيه 💵\n✦","md",true)
 Redis:setex("yiioooo" .. msg.sender_id.user_id,1800, true)
 end
 end
